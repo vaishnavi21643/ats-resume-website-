@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: resume-matcher
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resumematcher
+    username: postgres
+    password: '0000'
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+# Base URL of your FastAPI RAG/matching service
+fastapi:
+  base-url: http://localhost:8000
+  match-path: /match
+  timeout-seconds: 30
